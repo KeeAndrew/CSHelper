@@ -1,2 +1,2 @@
 # CSHelper
-This is CSHelper; a website I created to help CS Majors in general. 
+This is CSHelper; a personal project I created to help CS Majors in general. 
