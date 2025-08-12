@@ -31,7 +31,7 @@ app.use(
     credentials: true,
   })
 );
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
 // health (handy for quick checks)
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 
@@ -42,7 +42,6 @@ app.use("/api/problems", problemRoutes);
 app.use("/api/posts", postRoutes);
 app.use("/api/judge-java", judgeJavaRoutes);
 app.use("/api/ai", aiRoutes);
-app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // static in production
 if (process.env.NODE_ENV === "production") {

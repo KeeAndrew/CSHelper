@@ -20,8 +20,8 @@ const Navbar = () => {
               </div>
               <h1 className="text-lg font-bold">CSHelper</h1>
             </Link>
-            <Link to="/problems" className="btn btn-sm">
-              OA Practice
+            <Link to="/problems" className="btn btn-ghost btn-sm">
+              Practice
             </Link>
             <Link to="/forum" className="btn btn-sm">Forum</Link>
             <Link to="/ai" className="btn btn-sm">AI Help</Link>
