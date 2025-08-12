@@ -18,8 +18,20 @@ const messageSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    attachments: { type: [AttachmentSchema], default: [] },
   },
+
   { timestamps: true }
+);
+
+const AttachmentSchema = new mongoose.Schema(
+  {
+    url: String,
+    filename: String,
+    mimetype: String,
+    size: Number,
+  },
+  { _id: false }
 );
 
 const Message = mongoose.model("Message", messageSchema);

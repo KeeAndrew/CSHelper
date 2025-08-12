@@ -1,4 +1,6 @@
 import express from "express";
+import { protectRoute } from "../middleware/auth.middleware.js";
+import { upload } from "../middleware/upload.middleware.js";
 import {
     listPosts,
     getPost,
@@ -6,7 +8,6 @@ import {
     deletePost,
     createReply,
 } from "../controllers/post.controller.js";
-import { protectRoute } from "../middleware/auth.middleware.js"; // <-- named export
 
 const router = express.Router();
 
@@ -14,9 +15,9 @@ const router = express.Router();
 router.get("/", listPosts);
 router.get("/:id", getPost);
 
-// Auth required
-router.post("/", protectRoute, createPost);
+// Auth + files  (field name MUST be "files")
+router.post("/", protectRoute, upload.array("files", 5), createPost);
 router.delete("/:id", protectRoute, deletePost);
-router.post("/:id/replies", protectRoute, createReply);
+router.post("/:id/replies", protectRoute, upload.array("files", 5), createReply);
 
 export default router;

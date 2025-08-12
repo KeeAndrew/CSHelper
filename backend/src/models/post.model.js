@@ -7,6 +7,17 @@ const PostSchema = new mongoose.Schema(
         body: { type: String, required: true, maxlength: 20000 },
         tags: [{ type: String, trim: true }],
         repliesCount: { type: Number, default: 0 },
+        attachments: {
+            type: [
+                {
+                    url: String,
+                    filename: String,
+                    mimetype: String,
+                    size: Number,
+                },
+            ],
+            default: [],
+        },
     },
     { timestamps: true }
 );
