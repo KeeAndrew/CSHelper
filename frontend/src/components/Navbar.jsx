@@ -21,7 +21,7 @@ const Navbar = () => {
               <h1 className="text-lg font-bold">CSHelper</h1>
             </Link>
             <Link to="/problems" className="btn btn-sm">
-              Practice
+              OA Practice Problems
             </Link>
             <Link to="/forum" className="btn btn-sm">Forum</Link>
             <Link to="/ai" className="btn btn-sm">AI Help</Link>
