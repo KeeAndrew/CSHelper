@@ -1,5 +1,10 @@
 import mongoose from "mongoose";
 
+
+const AttachmentSchema = new mongoose.Schema(
+  { url: String, filename: String, mimetype: String, size: Number },
+  { _id: false }
+);
 const messageSchema = new mongoose.Schema(
   {
     senderId: {
@@ -18,6 +23,7 @@ const messageSchema = new mongoose.Schema(
     image: {
       type: String,
     },
+    attachments: { type: [AttachmentSchema], default: [] },
   },
   { timestamps: true }
 );
